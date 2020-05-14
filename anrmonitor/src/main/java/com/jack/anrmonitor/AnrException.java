@@ -39,7 +39,7 @@ public class AnrException extends Error {
      * @param filterStr                   过滤Thread.name针对主线程无效
      * @param logThreadsWithoutStackTrace 是否记录无堆栈信息的Thread
      */
-    public static AnrException createThreadException(long duration, String filterStr, boolean logThreadsWithoutStackTrace) {
+    static AnrException createThreadException(long duration, String filterStr, boolean logThreadsWithoutStackTrace) {
         final Thread mainThread = Looper.getMainLooper().getThread();
         //给堆栈信息排序，主线程在最前面。
         Map<Thread, StackTraceElement[]> stackTracesMap = new TreeMap<>(new Comparator<Thread>() {
