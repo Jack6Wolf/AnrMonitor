@@ -43,6 +43,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         anrMonitor
                 .setAnrListener(new AnrMonitorListener.AnrListener() {
                     @Override

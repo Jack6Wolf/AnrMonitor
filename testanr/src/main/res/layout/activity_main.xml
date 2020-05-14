@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <Button
         android:id="@+id/minAnrDuration"
         android:layout_width="180dp"
@@ -70,13 +71,24 @@
         android:id="@+id/deadlock"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
         android:padding="20dp"
         android:text="死锁"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/stop"
         app:layout_constraintEnd_toEndOf="@+id/infiniteLoop"
         app:layout_constraintStart_toStartOf="@+id/infiniteLoop"
         app:layout_constraintTop_toBottomOf="@+id/infiniteLoop" />
+
+    <Button
+        android:id="@+id/stop"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:padding="20dp"
+        android:text="停止"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/deadlock"
+        app:layout_constraintStart_toStartOf="@+id/deadlock"
+        app:layout_constraintTop_toBottomOf="@+id/deadlock" />
 
     <ProgressBar
         android:id="@+id/progressBar"

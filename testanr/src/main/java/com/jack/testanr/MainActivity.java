@@ -140,5 +140,12 @@ public class MainActivity extends AppCompatActivity {
                 DeadLock();
             }
         });
+
+        findViewById(R.id.stop).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                application.anrMonitor.stopAnrMonitor();
+            }
+        });
     }
 }
