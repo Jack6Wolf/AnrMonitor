@@ -1,0 +1,3 @@
+rootProject.name='AnrMonitor'
+include ':anrmonitor'
+include ':testanr'
