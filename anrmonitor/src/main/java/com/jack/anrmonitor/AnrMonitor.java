@@ -1,8 +1,10 @@
 package com.jack.anrmonitor;
 
+import android.content.Context;
 import android.os.Debug;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.Vibrator;
 import android.util.Log;
 
 /**
@@ -49,6 +51,40 @@ public class AnrMonitor extends Thread {
     private volatile long tick = 0;
     private volatile boolean reported = false;
 
+    private Context context;
+
+    /**
+     * 默认AnrListener监听
+     */
+    private final AnrMonitorListener.AnrListener DEFAULT_ANR_LISTENER = new AnrMonitorListener.AnrListener() {
+        @Override
+        public void onAppNotResponding(AnrException anrException) {
+            //默认直接抛出异常
+            throw anrException;
+        }
+    };
+
+    /**
+     * AnrInterceptor
+     */
+    private final AnrMonitorListener.AnrInterceptor DEFAULT_ANR_INTERCEPTOR = new AnrMonitorListener.AnrInterceptor() {
+        @Override
+        public long intercept(long duration, AnrException anrException) {
+            vibrator();
+            return 0;
+        }
+    };
+
+    /**
+     * 默认InterruptionListener监听
+     */
+    private final AnrMonitorListener.InterruptionListener DEFAULT_INTERRUPTION_LISTENER = new AnrMonitorListener.InterruptionListener() {
+        @Override
+        public void onInterrupted(InterruptedException exception) {
+            Log.e(Constant.TAG, "Interrupted: " + exception.getMessage());
+        }
+    };
+
     private AnrMonitorListener.AnrListener anrListener = DEFAULT_ANR_LISTENER;
     private AnrMonitorListener.AnrInterceptor anrInterceptor = DEFAULT_ANR_INTERCEPTOR;
     private AnrMonitorListener.InterruptionListener interruptionListener = DEFAULT_INTERRUPTION_LISTENER;
@@ -61,8 +97,8 @@ public class AnrMonitor extends Thread {
     /**
      * 每隔5秒检测一次主线程
      */
-    public AnrMonitor() {
-        this(DEFAULT_ANR_TIMEOUT);
+    public AnrMonitor(Context context) {
+        this(context, DEFAULT_ANR_TIMEOUT);
     }
 
     /**
@@ -70,8 +106,9 @@ public class AnrMonitor extends Thread {
      *
      * @param monitorInterval
      */
-    public AnrMonitor(int monitorInterval) {
+    public AnrMonitor(Context context, int monitorInterval) {
         super();
+        this.context = context;
         this.monitorInterval = monitorInterval;
     }
 
@@ -212,7 +249,7 @@ public class AnrMonitor extends Thread {
     }
 
     /**
-     * 设置AnrInterceptor被发生Anr之前拦截它们。
+     * 设置AnrInterceptor被发生Anr之前拦截它们。默认会震动提醒
      */
     public AnrMonitor setAnrInterceptor(AnrMonitorListener.AnrInterceptor interceptor) {
         if (interceptor == null) {
@@ -235,35 +272,15 @@ public class AnrMonitor extends Thread {
         return this;
     }
 
-    /**
-     * 默认AnrListener监听
-     */
-    private static final AnrMonitorListener.AnrListener DEFAULT_ANR_LISTENER = new AnrMonitorListener.AnrListener() {
-        @Override
-        public void onAppNotResponding(AnrException anrException) {
-            //默认直接抛出异常
-            throw anrException;
-        }
-    };
 
     /**
-     * AnrInterceptor
+     * 震动提醒
      */
-    private static final AnrMonitorListener.AnrInterceptor DEFAULT_ANR_INTERCEPTOR = new AnrMonitorListener.AnrInterceptor() {
-        @Override
-        public long intercept(long duration, AnrException anrException) {
-            return 0;
-        }
-    };
+    public void vibrator() {
+        Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+        long[] patter = {1, 500, 100, 500};
+        vibrator.vibrate(patter, -1);
+    }
 
-    /**
-     * 默认InterruptionListener监听
-     */
-    private static final AnrMonitorListener.InterruptionListener DEFAULT_INTERRUPTION_LISTENER = new AnrMonitorListener.InterruptionListener() {
-        @Override
-        public void onInterrupted(InterruptedException exception) {
-            Log.e(Constant.TAG, "Interrupted: " + exception.getMessage());
-        }
-    };
 
 }

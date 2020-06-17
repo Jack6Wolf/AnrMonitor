@@ -8,7 +8,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class AnrActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private final Object mutex = new Object();
 

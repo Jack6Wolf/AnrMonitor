@@ -23,4 +23,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'junit:junit:4.12'
+    implementation 'org.assertj:assertj-core:1.7.1'
 }

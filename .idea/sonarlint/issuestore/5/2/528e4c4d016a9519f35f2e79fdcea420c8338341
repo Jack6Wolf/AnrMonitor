@@ -1,0 +1,6 @@
+
+{	java:S135–"YReduce the total number of break and continue statements in this loop to use at most one.(Êþüÿÿÿÿ8§Âóˆ¡.
+\
+java:S3078˜">Use an "AtomicLong" for this field; its operations are atomic.(ÄË÷´8§Âóˆ¡.
+p
+java:S3776“"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(“–ýþ8§Âóˆ¡.

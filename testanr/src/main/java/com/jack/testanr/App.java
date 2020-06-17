@@ -11,6 +11,7 @@ import android.util.Log;
 import com.jack.anrmonitor.AnrException;
 import com.jack.anrmonitor.AnrMonitor;
 import com.jack.anrmonitor.AnrMonitorListener;
+import com.jack.monitor.Monitor;
 
 import java.io.File;
 import java.io.PrintWriter;
@@ -25,7 +26,7 @@ import java.util.Date;
  */
 public class App extends Application {
     private static final String TAG = "App";
-    AnrMonitor anrMonitor = new AnrMonitor(2000);
+    AnrMonitor anrMonitor;
     private File logFile = new File(Environment.getExternalStorageDirectory(), "AnrLog.txt");
     /**
      * 发生anr的响应时长
@@ -43,7 +44,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        anrMonitor=Monitor.install().startAnrCustom(this,2000);
         anrMonitor
                 .setAnrListener(new AnrMonitorListener.AnrListener() {
                     @Override
@@ -58,8 +59,10 @@ public class App extends Application {
                     public long intercept(long duration, AnrException anrException) {
                         long ret = App.this.duration * 1000 - duration;
                         if (ret > 0) {
-                            Log.w(TAG, "主线程被阻塞(" + duration + " ms), 过" + ret + " ms，仍然被阻塞会造成ANR",anrException);
+                            Log.w(TAG, "主线程被阻塞(" + duration + " ms), 过" + ret + " ms，仍然被阻塞会造成ANR", anrException);
                         }
+                        //震动提醒
+                         anrMonitor.vibrator();
                         return ret;
                     }
                 })
@@ -72,6 +75,9 @@ public class App extends Application {
 
         anrMonitor.start();
         anrMonitor.setIgnoreDebugger(true);
+//快捷启动Monitor
+//        Monitor.install().start(this);
+
     }
 
 
@@ -122,4 +128,9 @@ public class App extends Application {
         ex.printStackTrace(pw);
     }
 
+    @Override
+    public void onTerminate() {
+        super.onTerminate();
+        Monitor.install().stop(this);
+    }
 }
