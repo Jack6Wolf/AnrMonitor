@@ -1,6 +1,9 @@
 
-{	java:S135–"YReduce the total number of break and continue statements in this loop to use at most one.(Êşüÿÿÿÿ8§Âóˆ¡.
-\
-java:S3078˜">Use an "AtomicLong" for this field; its operations are atomic.(ÄË÷´8§Âóˆ¡.
+{	java:S116;"_Rename this field "DEFAULT_ANR_LISTENER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(€æ¡í8Â‰Ó¬.
 p
-java:S3776“"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(“–ış8§Âóˆ¡.
+java:S3776¸"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(“–ış8§Âóˆ¡.
+{	java:S135»"YReduce the total number of break and continue statements in this loop to use at most one.(Êşüÿÿÿÿ8§Âóˆ¡.
+\
+java:S3078½">Use an "AtomicLong" for this field; its operations are atomic.(ÄË÷´8§Âóˆ¡.
+‰	java:S116Q"hRename this field "DEFAULT_INTERRUPTION_LISTENER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óƒ¹ùÿÿÿÿ8ßåÓ¬.
+~	java:S116F"bRename this field "DEFAULT_ANR_INTERCEPTOR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Íˆ·™8Â‰Ó¬.

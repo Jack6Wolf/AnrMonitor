@@ -39,6 +39,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation project(path: ':anrmonitor')
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-//    implementation 'com.github.Jack6Wolf:AnrMonitor:3.1'
+//    implementation 'com.github.Jack6Wolf:AnrMonitor:4.0'
 //    implementation(name: 'anrmonitor-release', ext: 'aar')
 }

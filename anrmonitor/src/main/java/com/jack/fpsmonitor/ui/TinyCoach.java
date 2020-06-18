@@ -56,8 +56,8 @@ public class TinyCoach {
         windowManager = (WindowManager) meterView.getContext().getSystemService(Service.WINDOW_SERVICE);
 
         int minWidth = meterView.getLineHeight()
-                + meterView.getTotalPaddingTop()
-                + meterView.getTotalPaddingBottom()
+                + meterView.getPaddingTop()
+                + meterView.getPaddingBottom()
                 + (int) meterView.getPaint().getFontMetrics().bottom;
         meterView.setMinWidth(minWidth);
 
