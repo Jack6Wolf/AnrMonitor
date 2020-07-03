@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+apply plugin: 'com.novoda.bintray-release'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.0"
@@ -11,6 +11,8 @@ android {
         versionName "1.0"
 
     }
+
+
 
     buildTypes {
         release {
@@ -25,4 +27,14 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'junit:junit:4.12'
     implementation 'org.assertj:assertj-core:1.7.1'
+}
+
+publish {
+    repoName = "AnrMonitor"//仓库名(repoName 如果没有填写，上传的库默认仓库是maven)
+    userOrg = 'pengwg'      //bintray注册的用户名
+    groupId = 'com.jack'     //compile引用时的第1部分groupId
+    artifactId = 'AnrMonitor'     //compile引用时的第2部分项目名
+    publishVersion = '4.0'    //compile引用时的第3部分版本号
+    desc = 'android apm'//d项目描述
+    website = 'https://github.com/Jack6Wolf/AnrMonitor' //github 托管地址
 }

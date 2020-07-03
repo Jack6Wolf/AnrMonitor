@@ -1,13 +1,13 @@
 
-`
-java:S2166"CRename this class to remove "Exception" or correct its inheritance.(Ï¸±Ô8»ó¬†¡.
 k
 java:S3551n"IMake this method "synchronized" to match the parent class implementation.(ÈÒÄøÿÿÿÿ8ä³ş†¡.
 t
 java:S3776*"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(¶äÄäşÿÿÿÿ8ê©èˆ¡.
+k
+java:S3551"IMake this method "synchronized" to match the parent class implementation.(ÈÒÄøÿÿÿÿ8çª›‡¡.
+`
+java:S2166"CRename this class to remove "Exception" or correct its inheritance.(Ï¸±Ô8»ó¬†¡.
 D
 java:S1948Z"(Make "thread" transient or serializable.(â£Ÿ48ñ¾ß‡¡.
 N
 java:S1068",Remove this unused "duration" private field.(°ÄèÒüÿÿÿÿ8‘á’‡¡.
-k
-java:S3551"IMake this method "synchronized" to match the parent class implementation.(ÈÒÄøÿÿÿÿ8çª›‡¡.

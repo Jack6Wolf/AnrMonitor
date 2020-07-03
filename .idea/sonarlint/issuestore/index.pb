@@ -65,3 +65,14 @@ o
 ?testanr/src/main/java/com/jack/testanr/ui/FPSSampleAdpater.java,6\a\6aaf16210c4eb1c00f7bcd5e26b8a91e572fa90e
 f
 6anrmonitor/src/main/java/com/jack/monitor/Monitor.java,7\c\7c60fb0fd6d0659da38f361d642aa627c47e5949
+>
+AnrMonitor.iml,1\0\108022d8978e34f2c370e2a9e5a12a9375566429
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+X
+(gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
+A
+gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
+k
+;testanr/src/test/java/com/jack/testanr/ExampleUnitTest.java,3\a\3af519e0e125e0054093d4cc01deb6b07532437f

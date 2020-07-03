@@ -1,11 +1,11 @@
 
+o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ«Éßøÿÿÿÿ8©ùÙŠ¡.
+C	java:S131W""Add a default case to this switch.(©Øûºûÿÿÿÿ8©ùÙŠ¡.
 D
 java:S2189""Add an end condition to this loop.(˜ïˆžÿÿÿÿÿ8¨ùÙŠ¡.
-o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò½œ‡úÿÿÿÿ8¨ùÙŠ¡.
-C	java:S131W""Add a default case to this switch.(©Øûºûÿÿÿÿ8©ùÙŠ¡.
 c
 java:S2184"FCast one of the operands of this multiplication operation to a "long".(¢ýØü8¨ùÙŠ¡.
-i	java:S100/"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÝ×N8©ùÙŠ¡.
 H
 java:S1481"&Remove this unused "i" local variable.(ùó›Ìøÿÿÿÿ8©ùÙŠ¡.
-o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ«Éßøÿÿÿÿ8©ùÙŠ¡.
+o	java:S100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ò½œ‡úÿÿÿÿ8¨ùÙŠ¡.
+i	java:S100/"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÀÝ×N8©ùÙŠ¡.

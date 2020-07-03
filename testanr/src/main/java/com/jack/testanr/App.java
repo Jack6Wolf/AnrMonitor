@@ -14,7 +14,10 @@ import com.jack.anrmonitor.AnrMonitorListener;
 import com.jack.monitor.Monitor;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.StringWriter;
+import java.io.Writer;
 import java.lang.reflect.Field;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -44,7 +47,7 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        anrMonitor=Monitor.install().startAnrCustom(this,2000);
+        anrMonitor = Monitor.install().startAnrCustom(this, 2000);
         anrMonitor
                 .setAnrListener(new AnrMonitorListener.AnrListener() {
                     @Override
@@ -62,7 +65,7 @@ public class App extends Application {
                             Log.w(TAG, "主线程被阻塞(" + duration + " ms), 过" + ret + " ms，仍然被阻塞会造成ANR", anrException);
                         }
                         //震动提醒
-                         anrMonitor.vibrator();
+                        anrMonitor.vibrator();
                         return ret;
                     }
                 })
@@ -102,6 +105,34 @@ public class App extends Application {
             e.printStackTrace();
         }
         return true;
+    }
+
+
+    /**
+     * 将异常日志转换为字符串
+     */
+    public static String getException(Throwable throwable) {
+        Writer writer = null;
+        PrintWriter printWriter = null;
+        try {
+            writer = new StringWriter();
+            printWriter = new PrintWriter(writer);
+            throwable.printStackTrace(printWriter);
+            return writer.toString();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        } finally {
+            if (writer != null) {
+                try {
+                    writer.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+            if (printWriter != null)
+                printWriter.close();
+        }
+        return null;
     }
 
     /**

@@ -1,31 +1,31 @@
 
-<
-java:S11703"!Make this final field static too.(ùžîÞùÿÿÿÿ
-s
-java:S1104"]Make redFlagPercentage a static final constant or non-public and provide accessors if needed.(ºÛ°ž
-x
-java:S1104%"]Make startingXPosition a static final constant or non-public and provide accessors if needed.(ß‚ð³ûÿÿÿÿ
-o
-java:S1104("YMake xOrYSpecified a static final constant or non-public and provide accessors if needed.(È¬ÿê
 v
 java:S1104"[Make DEFAULT_GRAVITY a static final constant or non-public and provide accessors if needed.(’ƒ°Òÿÿÿÿÿ
-w
-java:S1104)"\Make gravitySpecified a static final constant or non-public and provide accessors if needed.(šŠåÖþÿÿÿÿ
-u
-java:S3008"ZRename this field "DEFAULT_GRAVITY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ƒ°Òÿÿÿÿÿ
 x
-java:S1104."]Make frameDataCallback a static final constant or non-public and provide accessors if needed.(Çü™°üÿÿÿÿ
-v
-java:S1104"`Make yellowFlagPercentage a static final constant or non-public and provide accessors if needed.(éÂ‰°
-w
-java:S1104 "aMake deviceRefreshRateInMs a static final constant or non-public and provide accessors if needed.(ëÒ·Þ
+java:S1104&"]Make startingYPosition a static final constant or non-public and provide accessors if needed.(óÚ™¬þÿÿÿÿ
+o
+java:S1104("YMake xOrYSpecified a static final constant or non-public and provide accessors if needed.(È¬ÿê
+P
+java:S1444"5Make this "public static DEFAULT_GRAVITY" field final(’ƒ°Òÿÿÿÿÿ
+s
+java:S1104"]Make redFlagPercentage a static final constant or non-public and provide accessors if needed.(ºÛ°ž
 r
 java:S1104"WMake refreshRate a static final constant or non-public and provide accessors if needed.(Ù“’´ÿÿÿÿÿ
 U
 java:S1948."3Make "frameDataCallback" transient or serializable.(Çü™°üÿÿÿÿ8‹ôŠ‡¬.
+u
+java:S3008"ZRename this field "DEFAULT_GRAVITY" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’ƒ°Òÿÿÿÿÿ
+w
+java:S1104)"\Make gravitySpecified a static final constant or non-public and provide accessors if needed.(šŠåÖþÿÿÿÿ
 v
 java:S1104'"[Make startingGravity a static final constant or non-public and provide accessors if needed.(”àïüÿÿÿÿ
-P
-java:S1444"5Make this "public static DEFAULT_GRAVITY" field final(’ƒ°Òÿÿÿÿÿ
 x
-java:S1104&"]Make startingYPosition a static final constant or non-public and provide accessors if needed.(óÚ™¬þÿÿÿÿ
+java:S1104%"]Make startingXPosition a static final constant or non-public and provide accessors if needed.(ß‚ð³ûÿÿÿÿ
+w
+java:S1104 "aMake deviceRefreshRateInMs a static final constant or non-public and provide accessors if needed.(ëÒ·Þ
+v
+java:S1104"`Make yellowFlagPercentage a static final constant or non-public and provide accessors if needed.(éÂ‰°
+x
+java:S1104."]Make frameDataCallback a static final constant or non-public and provide accessors if needed.(Çü™°üÿÿÿÿ
+<
+java:S11703"!Make this final field static too.(ùžîÞùÿÿÿÿ
