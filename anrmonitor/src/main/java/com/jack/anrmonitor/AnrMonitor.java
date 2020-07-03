@@ -196,8 +196,11 @@ public class AnrMonitor extends Thread {
                 interruptionListener.onInterrupted(e);
                 return;
             }
+
+            //防止线程之间并发问题,用局部变量保存
+            long duration = tick;
             // 如果主线程没有处理ticker，就说明被阻塞了。
-            if (tick != 0 && !reported) {
+            if (duration != 0 && !reported) {
 
                 //检测是否存在debuging模式中
                 if (!ignoreDebugger && (Debug.isDebuggerConnected() || Debug.waitingForDebugger())) {
@@ -206,7 +209,7 @@ public class AnrMonitor extends Thread {
                     continue;
                 }
 
-                interval = anrInterceptor.intercept(tick, AnrException.createThreadException(tick, "", false));
+                interval = anrInterceptor.intercept(duration, AnrException.createThreadException(duration, "", false));
                 //根据返回值处理是否终结本次onAppNotResponding回调
                 if (interval > 0) {
                     continue;
@@ -215,9 +218,9 @@ public class AnrMonitor extends Thread {
                 //确定发生了Anr，开始生成AnrException.
                 AnrException anrException;
                 if (filterStr != null) {
-                    anrException = AnrException.createThreadException(tick, filterStr, logThreadsWithoutStackTrace);
+                    anrException = AnrException.createThreadException(duration, filterStr, logThreadsWithoutStackTrace);
                 } else {
-                    anrException = AnrException.createMainThreadException(tick);
+                    anrException = AnrException.createMainThreadException(duration);
                 }
                 anrListener.onAppNotResponding(anrException);
                 interval = monitorInterval;
