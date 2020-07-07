@@ -127,12 +127,7 @@ public class FpsMonitor {
     }
 
     /**
-     * this adds a frame callback that the library will invoke on the
-     * each time the choreographer calls us, we will send you the frame times
-     * and number of dropped frames.
-     *
-     * @param callback
-     * @return
+     * 增加FrameDataCallback
      */
     public FpsMonitor addFrameDataCallback(FrameDataCallback callback) {
         fpsConfig.frameDataCallback = callback;
@@ -140,10 +135,7 @@ public class FpsMonitor {
     }
 
     /**
-     * set red flag percent, default is 20%
-     *
-     * @param percentage
-     * @return
+     * 设置红色标记百分比，默认为20%
      */
     public FpsMonitor redFlagPercentage(float percentage) {
         fpsConfig.redFlagPercentage = percentage;
@@ -151,7 +143,7 @@ public class FpsMonitor {
     }
 
     /**
-     * set red flag percent, default is 5%
+     * 设置红旗百分比，默认为5%
      */
     public FpsMonitor yellowFlagPercentage(float percentage) {
         fpsConfig.yellowFlagPercentage = percentage;

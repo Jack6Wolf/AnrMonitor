@@ -81,6 +81,42 @@ public class App extends Application {
 //快捷启动Monitor
 //        Monitor.install().start(this);
 
+//        Monitor.install().startAnrCustom(this,2000)
+//                //阻塞时是否只记录主线程堆栈信息
+//                .setReportMainThreadOnly()
+//                //阻塞时根据线程名关键字过滤堆栈信息
+//                .setReportThreadNameFilter("Main")
+//                //阻塞时记录所有线程堆栈信息
+//                .setReportAllThreads()
+//                //是否忽略Debug模式下的阻塞
+//                .setIgnoreDebugger()
+//                //阻塞时是否记录不含堆栈信息的线程
+//                .setLogThreadsWithoutStackTrace()
+//                //发生阻塞时拦截监听
+//                .setAnrInterceptor()
+//                //发生阻塞时的监听
+//                .setAnrListener()
+//                //最后必须调用
+//                .start();
+
+//        Monitor.install().startFpsCustom()
+//                //用户自定义帧率监控回调，返回前一个垂直同步帧时间，当前垂直同步帧时间，当前时间和以前时间之间被丢弃帧的数量
+//                .addFrameDataCallback()
+//                //帧率显示黄色预警的丢帧比例
+//                .yellowFlagPercentage()
+//                //帧率显示红色预警的丢帧比例
+//                .redFlagPercentage()
+//                //帧率显示器方位
+//                .startingGravity()
+//                //帧率显示器在X轴的坐标
+//                .startingXPosition()
+//                //帧率显示器在Y轴的坐标
+//                .startingYPosition()
+//                //帧率显示器隐藏
+//                .hide()
+//                //最后必须调用（帧率显示器显示）
+//                .show(this);
+
     }
 
 
